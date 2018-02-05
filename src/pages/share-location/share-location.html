@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Share Locations With</ion-title>
+    <ion-buttons end>
+      <button clear ion-button icon-only (click)="toggleSearchBar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <!-- <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar> -->
+  <ion-searchbar *ngIf="!isHidden" (ionInput)="searchItems($event)" placeholder="By name or mobile no"></ion-searchbar>
+  <ion-list>
+    <ion-list-header>
+      Contacts in Group
+    </ion-list-header>
+    <ion-item *ngFor="let groupContact of groupContacts">
+      <div class="item-container">
+        <div>
+        <img class="image" [src]="groupContact.userProfile.profile_img" alt="">
+      </div>
+        <div class="contanct-details">
+          <p>{{groupContact.userProfile.user_name}}</p>
+          <p>{{groupContact.userProfile.mobile_no}}</p>
+        </div>
+        <button ion-button clear icon-only color="secondary" (click)="toggleConnectivity(groupContact)">
+          <img *ngIf="groupContact.isConnected" class="imgbtn" src="assets/imgs/link.svg" alt="">
+          <img *ngIf="!groupContact.isConnected" class="imgbtn" src="assets/imgs/broken_link.svg" alt="">
+        </button>
+
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <button ion-button full icon-right color="secondary" (click)="startNewJouney()">Start Safe & Informed Journey
+
+    <ion-icon name="happy"></ion-icon>
+  </button>
+</ion-footer>

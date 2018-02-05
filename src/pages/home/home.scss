@@ -1,0 +1,17 @@
+page-home {
+  .contacts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    contact {
+      max-width: 50%;
+    }
+  }
+
+  .no_tracking {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+  }
+}

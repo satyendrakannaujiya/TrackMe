@@ -1,0 +1,37 @@
+page-share-location {
+  .selected {
+    background-color: map-get($colors, primary);
+  }
+
+  button img {
+    height: 36px;
+  }
+
+  ion-list .item-container {
+    // background-color: red;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    .imgbtn {
+      width: 16px;
+      flex-grow: 1;
+      border-radius:50%;
+      margin-right:2px;
+    }
+    .image{
+        height:50px;
+        width:50px;
+        border-radius:50%;
+    }
+    div {
+      flex-grow: 2;
+    }
+
+    .item-button {
+      flex-grow: 1;
+      padding: 4px;
+      height: 48px;
+    }
+  }
+}

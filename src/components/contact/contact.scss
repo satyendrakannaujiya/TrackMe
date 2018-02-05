@@ -1,0 +1,22 @@
+contact {
+  .profile-img-container {
+    width: 75%;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 50%;
+    background-color: map-get($colors, light);
+    padding: 1px;
+  }
+
+  .profile-img {
+    margin: 0 auto;
+    width: 100%;
+    padding: 4px;
+    border-radius: 50%;
+  }
+
+  .name {
+    text-align: center;
+    font-size: 0.5rem;
+  }
+}

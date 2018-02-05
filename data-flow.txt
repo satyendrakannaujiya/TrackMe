@@ -1,0 +1,57 @@
+Login/Registration/Phone Verification
+
+1. First Time User need to enter his/her mobile no.
+2. User will login by sent OTP.
+3. User will be taken to registration page where he/she will be asked for user_id, 
+new password and profile_image by opening up the camera.
+After successful registration a new record in user_profiles will be created as
+
+user_profile : {
+     mobile_no "9044477586"
+     password "123456"
+     profile_img ""
+     user_name "sushil" 
+}
+
+4.Next time when the user will open the application he/she has to use the given password while registeration.
+
+5.System : System will check the availablility of user in the user_profiles and will save a flag against the mobile no in local storage, once login
+is successful.
+
+6. If user is not available he/she will be prompted for signup.
+
+
+
+Start New Journey
+1. User can start new journey by selecting the
+ a. Source Location ( Will be fetched by GPS)
+ b. Destination (Will enter the destination)
+
+ 2. He/She will be prompted to select the users he/she wants to share his/her location with.
+ 3. A new jouney record will be created on the basis of above details.
+
+ journey_details : {
+      from: "Allahabad",
+      to: "Lucknow",  
+      startedBy: "7388960367",
+      finalStatus: "incomplete", // this field will be updated as complete when currentPosition == to;
+      members:[
+        {
+          mobileNo: "",
+          userId: "",
+          profileImg: ""
+        }
+      ],
+      notifications:[
+          {
+          dateTime: "January 5, 2018 at 3:15:00 AM UTC+5:30",
+          currentlocation: "allahabad"
+        }  
+    ]
+ }
+
+
+
+
+
+

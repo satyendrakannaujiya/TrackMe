@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+
+    <button ion-button menuToggle>
+
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+    <ion-buttons end>
+      <button ion-button clear color="dark">
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3 class="heading">Tracking To</h3>
+
+  <!-- If list size is not null and greater than 0 render <journery-details 
+  otherwise render the nothingToTrack template -->
+  <div *ngIf="journeyDetailsList?.length > 0 else nothingToTrack">
+    <journey-details *ngFor="let journeyDetails of journeyDetailsList" [journey-param]="journeyDetails" (click)="showMap()" ></journey-details>
+  </div>
+  <ng-template #nothingToTrack>
+    <h3>No one is moving.</h3>
+    <img class="no_tracking" src="assets/imgs/not_moving.svg" alt="">
+  </ng-template>
+  <ion-fab class="fab-btn">
+    <button ion-fab color="secondary" (click)="navigateTo('JourneyPage')">
+      <ion-icon name="bus"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

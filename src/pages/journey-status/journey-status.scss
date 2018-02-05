@@ -1,0 +1,17 @@
+page-journey-status {
+  .profile-img {
+    display: block;
+    margin: 0 auto;
+    width: 64px;
+  }
+
+  .in-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .in-column ion-label {
+    width: 90%;
+  }
+}

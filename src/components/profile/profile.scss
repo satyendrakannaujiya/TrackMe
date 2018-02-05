@@ -1,0 +1,24 @@
+profile {
+  .profile-container {
+    background: $background;
+    padding: 8px;
+  }
+  .profile-container img {
+    display: block;
+   margin: 0 auto;
+    width: 50%;
+    
+    // margin-top: 8px;
+    // margin-bottom: 8px;
+  }
+
+  .name,
+  .contact {
+    text-align: center;
+  }
+
+  .controls {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

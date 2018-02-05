@@ -1,0 +1,72 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Sign Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+     <ion-list>
+         <button ion-button full (click)="takePhoto()">
+    <ion-icon name="camera"></ion-icon>
+    &nbsp;&nbsp;Take Photo
+
+
+
+
+  </button>
+
+    <div *ngIf="idata">
+         <img class="image" [src]="image_data">
+      </div>
+     </ion-list>
+  <ion-list>
+
+    <ion-item>
+      <!-- <ion-label stacked>Enter Mobile No (Only Indian Origin Supported)</ion-label> -->
+      <ion-input type="tel" [(ngModel)]="mobileNo" placeholder="Enter mobileno" maxlength="10"></ion-input>
+    </ion-item>
+
+  </ion-list>
+  <ion-buttons end>
+  <button ion-button end icon-right color="primary" (click)="sendMessage()">
+
+    Send OTP
+    <ion-icon name="send"></ion-icon>
+  </button>
+</ion-buttons>
+<ion-list>
+
+    <ion-item>
+      <!-- <ion-label stacked>Enter Mobile No (Only Indian Origin Supported)</ion-label> -->
+      <ion-input type="tel" [(ngModel)]="otp" placeholder="Enter OTP"></ion-input>
+    </ion-item>
+
+  </ion-list>
+  <ion-buttons end>
+  <button ion-button end icon-right color="primary" (click)="Verify()">
+
+    Verify Otp
+    
+  </button>
+</ion-buttons>
+   
+   <!--  <ion-item>
+   <p>{{message}}</p>
+   </ion-item> -->
+     <ion-item>
+      <!-- <ion-label stacked>Enter Mobile No (Only Indian Origin Supported)</ion-label> -->
+      <ion-input type="text" [(ngModel)]="username" placeholder="Enter username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <!-- <ion-label stacked>Enter Mobile No (Only Indian Origin Supported)</ion-label> -->
+      <ion-input type="password" [(ngModel)]="password" placeholder="Enter password"></ion-input>
+    </ion-item>
+  <button ion-button block color="secondary" (click)="Register()">Register</button>
+</ion-content>
+<!-- <ion-footer>
+  <button ion-button full color="secondary" (click)="navigateToLogin()"> Back To Login </button>
+</ion-footer> -->
