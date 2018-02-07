@@ -14,9 +14,9 @@
 
 
 <ion-content padding>
-  <img src="assets/imgs/avatars/1.svg" alt="" class="profile-img">
-  <h6 class="text-center">Shiv Sundar Das</h6>
-  <h6 class="text-center">34643643643</h6>
+  <img src={{details.started_by.profile_img}} alt="" class="profile-img">
+  <h6 class="text-center">{{details.started_by.user_name}}</h6>
+  <h6 class="text-center">{{details.started_by.mobile_no}}</h6>
 
   <ion-list>
     <ion-list-header>
@@ -24,27 +24,28 @@
     </ion-list-header>
     <ion-item class="in-column">
       <ion-label>From :
-        <strong>Allahabad</strong>
+        <strong>{{details.from}}</strong>
       </ion-label>
 
       <ion-label>To :
-        <strong>Lucknow</strong>
+        <strong>{{details.to}}</strong>
       </ion-label>
 
       <ion-label>Current Location :
-        <em>Unchahaar</em>
+        <em>{{details.current_position}}</em>
       </ion-label>
     </ion-item>
   </ion-list>
   <ion-list>
-    <ion-list-header>
+    <ion-list-header (click)="showMap()">
       Location in Map
     </ion-list-header>
   </ion-list>
 
   <ion-list>
     <ion-list-header>
-      Status Updates
+      Status Updates : 
+       <em>{{details.status}}</em>
     </ion-list-header>
     <ion-item>
       <strong>Raibarelly</strong> at

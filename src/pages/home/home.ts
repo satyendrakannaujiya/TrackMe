@@ -11,6 +11,8 @@ import { Position } from "../../providers/journey-details/position.model";
 import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
 import { LocationProvider } from "../../providers/location/location";
 import { PositionMapPage} from "../position-map/position-map";
+import { JourneyStatusPage } from "../journey-status/journey-status";
+
 @IonicPage()
 @Component({
   selector: "page-home",
@@ -38,15 +40,15 @@ export class HomePage {
     console.log("Notifications Provider : " + journeyDetailsProvider);
 
 
-      this.locationprovider.findLocation().then((resp)=>{
-        console.log("response "+resp);
-             this.latitude = resp.latitude;
-             this.longitude = resp.longitude;
-           console.log("latitude  "+this.latitude);
-           console.log("longitude  "+this.longitude);
+      // this.locationprovider.findLocation().then((resp)=>{
+      //   console.log("response "+resp);
+      //        this.latitude = resp.latitude;
+      //        this.longitude = resp.longitude;
+      //      console.log("latitude  "+this.latitude);
+      //      console.log("longitude  "+this.longitude);
            
 
-      })
+      // })
        // location = this.locationprovider.location;
        //  this.from = this.location.locality + "," + this.location.subLocality;
        //   console.log("this.from "+this.from);
@@ -125,6 +127,20 @@ export class HomePage {
               latitude:this.latitude,
               longitude:this.longitude
             });
+
+     }
+
+     journeyStatus(journeyDetails:JourneyDetails){
+
+       var journeyDetails: JourneyDetails = new JourneyDetails();
+         journeyDetails=journeyDetails;
+                console.log("journey details "+journeyDetails);
+                //  console.log(journeyDetails.from);
+       console.log("journey status");
+       this.navCtrl.push(JourneyStatusPage,{
+         journeyDetails:JourneyDetails
+       });
+
 
      }
 }

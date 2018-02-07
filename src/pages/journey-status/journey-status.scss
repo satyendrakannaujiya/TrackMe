@@ -1,9 +1,10 @@
 page-journey-status {
-  .profile-img {
+
+            .profile-img {
     display: block;
     margin: 0 auto;
     width: 64px;
-  }
+      }
 
   .in-column {
     display: flex;
@@ -14,4 +15,5 @@ page-journey-status {
   .in-column ion-label {
     width: 90%;
   }
+
 }
